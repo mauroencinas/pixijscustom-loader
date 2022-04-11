@@ -4,7 +4,7 @@
   "main": "dist/cjs/loaders.js",
   "module": "dist/esm/loaders.js",
   "bundle": "dist/browser/loaders.js",
-  "description": "Load assets and resources",
+  "description": "Load assets and resources, customized with xhr headeds added",
   "author": "Mat Groves",
   "contributors": [
     "Matt Karl <matt@mattkarl.com>"
