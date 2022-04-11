@@ -1,6 +1,6 @@
 /*!
  * @pixi/loaders - v6.3.0
- * Compiled Mon, 11 Apr 2022 07:18:21 UTC
+ * Compiled Mon, 11 Apr 2022 17:35:51 UTC
  *
  * @pixi/loaders is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -575,7 +575,8 @@ var _pixi_loaders = (function (exports, core) {
             this._setFlag(LoaderResource.STATUS_FLAGS.LOADING, true);
             this.onStart.dispatch(this);
             // if unset, determine the value
-            if (this.crossOrigin === false || typeof this.crossOrigin !== 'string') {
+            // if (this.crossOrigin === false || typeof this.crossOrigin !== 'boolean')
+            if (typeof this.crossOrigin !== 'string' || typeof this.crossOrigin !== 'boolean') {
                 this.crossOrigin = this._determineCrossOrigin(this.url);
             }
             switch (this.loadType) {
