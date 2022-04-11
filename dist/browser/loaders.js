@@ -1,6 +1,6 @@
 /*!
  * @pixi/loaders - v6.3.0
- * Compiled Mon, 11 Apr 2022 05:36:16 UTC
+ * Compiled Mon, 11 Apr 2022 07:18:21 UTC
  *
  * @pixi/loaders is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -748,13 +748,13 @@ var _pixi_loaders = (function (exports, core) {
             if (this.crossOrigin === 'use-credentials') {
                 xhr.withCredentials = true;
             }
-            // adding custom headers
-            if (this.headers && this.headers.isArray) {
-                xhr.setRequestHeader(this.headers[0], this.headers[1]);
-            }
             // set the request type and url
             xhr.open('GET', this.url, true);
             xhr.timeout = this.timeout;
+            // adding custom headers
+            if (this.headers && Array.isArray(this.headers)) {
+                xhr.setRequestHeader(this.headers[0], this.headers[1]);
+            }
             // load json as text and parse it ourselves. We do this because some browsers
             // *cough* safari *cough* can't deal with it.
             if (this.xhrType === LoaderResource.XHR_RESPONSE_TYPE.JSON
